@@ -7,6 +7,11 @@
 </head>
 <body class="antialiased">
 
+<a href="{{route('posts.index')}}">All posts</a>
+@foreach($categories as $cat)
+    <a href="{{route('posts.category', $cat->id)}}">{{$cat->name}}</a>
+@endforeach
+
 <div>
 <h2><a href="{{route('posts.create')}}">Go to create page</a></h2>
 </div>
@@ -22,6 +27,8 @@
         <button type="submit" value="Delete">Delete!</button>
     </form>
 @endforeach
+
+
 
 </body>
 </html>
